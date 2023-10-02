@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>temperature Converter</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: large;
+            background-image: url('bgimg.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            height: 730px;
+        }
+        .first{
+            text-align: center;
+            padding: 10%;
+        }
+        #outputFahrenheit{
+            width: 150px;
+            height: 8px;
+            background-color:white;
+            border: 1px solid #000;
+            padding: 12px;
+            text-align: center;
+            margin-left: 525px;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="first">
+        <h1>Temperature Converter</h1>
+        <div>
+            <label>Celsius:</label><br>
+            <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+        </div>
+        <br> 
+        <div>
+            <label >Fahrenheit: </label>
+            <p id="outputFahrenheit"></p>
+        </div>
+    </div>
+
+
+    <script>
+        function temperatureConverter(valNum)
+        {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+        }
+    </script>
+</body>
+</html>
